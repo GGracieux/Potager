@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Editeur de potager</title>
+	
+	<!-- CSS -->
+    <link rel="stylesheet" href="libs/Bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="libs/PaperJs/paper.css">
+	<link rel="stylesheet" href="libs/Chargement/chargement.css">
+	<link rel="stylesheet" href="libs/Potager/potager.css">
+	
+	<!-- JS -->
+	<script type="text/javascript" src="libs/FileSaver/FileSaver.js"></script>
+    <script type="text/javascript" src="libs/JQuery/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="libs/PaperJS/paper-full.js"></script>
+	<script type="text/javascript" src="libs/Chargement/chargement.js"></script>
+    <script type="text/javascript" src="libs/Potager/potager-data.js"></script>
+    <script type="text/javascript" src="libs/Potager/potager-ihm.js"></script>
+	<script type="text/javascript" src="libs/Potager/potager.js"></script>
+	
+</head>
+<body>
+    <div class="container-full">			
+	
+		<!-- Panneau contextuel --> 
+		<div id="panneauContextuel" >
+			<div id="contextContent">Infos ...</div>
+		</div>		
+	
+		<!-- Panneau de chargement --> 
+		<div id="chargement" >
+			<div id="chargementText">
+			<img src="img/logo-loading.jpg"></img><br/>
+			Chargement ...
+			</div>
+		</div>	
+		
+		<!-- Entête --> 
+		<div class="page-header">			
+			<h1>Editeur de potager</h1>
+			<p class="lead">Positionnement des plantes par affinités (version 0.3 beta)</p>
+		</div>		
+		
+		<!-- Container principal --> 
+		<div class="row">
+		
+			<!-- Colonne de gauche -->
+			<div class="col-gauche" >
+				<div id="interface" >
+				
+					<span class="IntTitle">Vue</span>
+					<div class="radio-toolbar">
+					
+						<input type="radio" name="modeVue" id="modeVuePhysique" checked>
+						<label for="modeVuePhysique">Positionnement</label>
+						
+						<input type="radio" name="modeVue" id="modeVueInfluence">
+						<label for="modeVueInfluence">Bien être</label>
+						
+						<input type="radio" name="modeVue" id="modeVueInfluenceZones">
+						<label for="modeVueInfluenceZones">Bien être et zones</label>
+						
+						<input type="radio" name="modeVue" id="modeVueEgoiste">
+						<label for="modeVueEgoiste">Meilleur place</label>
+						
+						<input type="radio" name="modeVue" id="modeVueAltruiste"> 
+						<label for="modeVueAltruiste">Meilleur aide</label>
+						
+					</div>
+					<br/>		
+					
+					<span class="IntTitle">Plante</span>					
+					<select class="form-control" id="addPlanteType" size="10"></select>
+					<br/>
+					
+					<span class="IntTitle">Forme</span>	
+					<div class="radio-toolbar">
+					
+						<input type="radio" name="addPlanteForme" id="addPlanteFormeRond" value="ellipse" checked>
+						<label for="addPlanteFormeRond">Ellipse</label>
+						
+						<input type="radio" name="addPlanteForme" id="addPlanteFormeRectangle" value="rectangle">
+						<label for="addPlanteFormeRectangle">Rectangle</label>
+						
+					</div><br/>
+
+					<span class="IntTitle">Données </span>	
+					<span class="btn btn-warning btn-file btn-xs">Charger <input type="file" id="charger"></span>&nbsp;
+					<span class="btn btn-warning btn-xs" id="sauvegarder">Sauver</span>						
+					
+				</div>
+			</div>
+			
+			<!-- Colonne centrale -->
+			<div class="col-center"">
+				<canvas id="canvas" resize></canvas>
+			</div>
+			
+		</div>					
+	</div>
+</body>
+</html>
